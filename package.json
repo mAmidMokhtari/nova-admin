@@ -1,0 +1,39 @@
+{
+  "name": "nova-admin",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b",
+    "lint": "oxlint",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.14.0",
+    "axios": "^1.21.1",
+    "formik": "^2.4.9",
+    "lucide-react": "^1.71.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-redux": "^9.3.1",
+    "react-router-dom": "^7.18.5",
+    "styled-components": "^6.6.0",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "oxlint": "^1.90.0",
+    "prettier": "^3.9.10",
+    "typescript": "~7.0.2",
+    "vazirmatn": "^33.0.3",
+    "vite": "^8.3.6"
+  },
+  "packageManager": "pnpm@10.32.1"
+}
