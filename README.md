@@ -162,4 +162,4 @@ a `Secure; HttpOnly; SameSite` cookie and the storage wrapper would be removed.
 - The panel targets desktop widths from 1280px, as allowed by the challenge.
 - The reference image shows a dashboard and a settings entry in the sidebar;
   only the required pages (products, users) are implemented.
-- Time spent: about 11 hours, including code review and manual testing.
+- Time spent: about 12 hours, including code review and manual testing.
