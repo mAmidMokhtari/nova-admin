@@ -4,8 +4,6 @@ Admin panel of the NOVA store, built for the NOVA frontend technical challenge.
 It signs an admin in and manages products and users through the public
 [FakeStoreAPI](https://fakestoreapi.com/docs).
 
-> This repository is shared for hiring evaluation only. See [LICENSE](./LICENSE).
-
 ## Stack
 
 | Area    | Choice                                            |
