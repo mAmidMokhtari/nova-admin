@@ -4,6 +4,16 @@ Admin panel of the NOVA store, built for the NOVA frontend technical challenge.
 It signs an admin in and manages products and users through the public
 [FakeStoreAPI](https://fakestoreapi.com/docs).
 
+## Screenshots
+
+| Login                                     | Products                                        |
+| ----------------------------------------- | ----------------------------------------------- |
+| ![Login page](docs/screenshots/login.jpg) | ![Products list](docs/screenshots/products.jpg) |
+
+| Create product                                                | Users (English, dark theme)                                                      |
+| ------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| ![Create product dialog](docs/screenshots/create-product.jpg) | ![Users list in English with the dark theme](docs/screenshots/users-en-dark.jpg) |
+
 ## Stack
 
 | Area    | Choice                                            |
