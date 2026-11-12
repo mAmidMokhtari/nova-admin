@@ -173,9 +173,10 @@ a `Secure; HttpOnly; SameSite` cookie and the storage wrapper would be removed.
 
 ## Planning and estimate
 
-Before starting I broke the challenge into parts and estimated each one. The
-table covers both repositories (NOVA Admin and NOVA Store). It is the plan I
-worked from, not a log of hours.
+The table is an estimate of the work, not a log of hours, and it covers both
+repositories (NOVA Admin and NOVA Store). The implementation rows are the
+estimate the AI assistant gave when I handed it the challenge document. The
+last two rows, code review and manual testing, are my own part.
 
 | Part                                                              | Estimate |
 | ----------------------------------------------------------------- | -------- |
@@ -190,10 +191,44 @@ worked from, not a log of hours.
 | Manual testing of every flow                                      | 1.75 h   |
 | **Total**                                                         | **12 h** |
 
-### How it was built
+### How I work with AI assistants
 
-The first version was built on 10 November in a single working session with an
-AI coding assistant (Claude Code), which I directed and reviewed. That is why
-the initial commits of each project share one timestamp: the work was
-committed in logical steps at the end of that session. After that I reviewed
-the code, tested it manually and applied fixes, which are the later commits.
+I use Claude as a tool inside a process I control. On my own product the
+process is:
+
+- **Two roles.** A coordinator session holds the context: the roadmap, the
+  architecture decisions and the conventions. It writes the task for each
+  phase. A separate builder session (Claude Code inside the repository)
+  implements one phase per fresh session.
+- **Decisions are mine.** Product and architecture decisions are written down
+  before any code: a roadmap, decision records and a conventions file. The
+  builder works from those documents and is expected to stop and ask when
+  they do not answer a question.
+- **Every phase is reviewed.** The builder reports what it changed, with
+  screenshots. I check the result myself, and the coordinator reviews the
+  report against the plan before the next phase starts. When a builder drifts
+  from the plan, I stop it and the change is redone.
+- **Hard rules.** No secrets in chat or code, destructive operations are done
+  by me, and lint, type-check and tests pass before a commit.
+
+### How this challenge was built
+
+The challenge is much smaller than a product, so I ran a shorter version of
+that process:
+
+- **Inputs.** The challenge document was the specification and the conventions
+  of my own codebase were the rules. The stack and the folder structure were
+  fixed by the document.
+- **One builder session.** After I approved its breakdown and estimate (the
+  table above), a single Claude Code session generated both projects on
+  10 November in about an hour. Implementation details the document left open
+  were settled in that session and are listed under "Folder structure" and
+  "Assumptions and scope".
+- **Verification.** The session ran lint, type-check and build and checked
+  every page in a browser, in both languages, both themes and three widths. I
+  tested login and user creation by hand. Both repositories were also cloned
+  fresh and installed from the README.
+- **History.** The work was committed in logical steps at the end of that
+  session, which is why the initial commits of each project share one
+  timestamp. The later commits are documentation and repository housekeeping,
+  not changes to application code.
