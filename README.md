@@ -170,4 +170,30 @@ a `Secure; HttpOnly; SameSite` cookie and the storage wrapper would be removed.
 - The panel targets desktop widths from 1280px, as allowed by the challenge.
 - The reference image shows a dashboard and a settings entry in the sidebar;
   only the required pages (products, users) are implemented.
-- Time spent: about 12 hours, including code review and manual testing.
+
+## Planning and estimate
+
+Before starting I broke the challenge into parts and estimated each one. The
+table covers both repositories (NOVA Admin and NOVA Store). It is the plan I
+worked from, not a log of hours.
+
+| Part                                                              | Estimate |
+| ----------------------------------------------------------------- | -------- |
+| Admin: Vite setup, theme, dictionary, axios instance, Redux store | 0.75 h   |
+| Admin: login, route guards, sidebar and header layout             | 0.75 h   |
+| Admin: product and user lists and forms (Formik + Yup)            | 1.5 h    |
+| Store: Next.js setup, next-intl, proxy, SSR styling, theme        | 1 h      |
+| Store: landing page, categories, search, sorting, pagination      | 1.5 h    |
+| Store: cart with Zustand persist, metadata, robots, sitemap       | 0.75 h   |
+| Both: browser checks (fa/en, light/dark, three widths), README    | 1 h      |
+| Code review of both projects                                      | 3 h      |
+| Manual testing of every flow                                      | 1.75 h   |
+| **Total**                                                         | **12 h** |
+
+### How it was built
+
+The first version was built on 10 November in a single working session with an
+AI coding assistant (Claude Code), which I directed and reviewed. That is why
+the initial commits of each project share one timestamp: the work was
+committed in logical steps at the end of that session. After that I reviewed
+the code, tested it manually and applied fixes, which are the later commits.
