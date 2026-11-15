@@ -113,6 +113,7 @@ export const en: Dictionary = {
     [ApiErrorCode.Network]: 'Could not reach the server. Check your connection.',
     [ApiErrorCode.Timeout]: 'The server took too long to respond. Try again.',
     [ApiErrorCode.Unauthorized]: 'Your session has expired. Sign in again.',
+    [ApiErrorCode.Forbidden]: 'You do not have permission to do this.',
     [ApiErrorCode.NotFound]: 'The requested data was not found.',
     [ApiErrorCode.Server]: 'The server ran into a problem. Try again shortly.',
     [ApiErrorCode.Unknown]: 'Something unexpected happened. Try again.',

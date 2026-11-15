@@ -28,7 +28,9 @@ function resolveErrorCode(error: AxiosError): ApiErrorCode {
   const status = error.response?.status;
 
   if (status === undefined) return ApiErrorCode.Network;
-  if (status === 401 || status === 403) return ApiErrorCode.Unauthorized;
+  if (status === 401) return ApiErrorCode.Unauthorized;
+  // The session is valid but may not do this, so the admin stays signed in.
+  if (status === 403) return ApiErrorCode.Forbidden;
   if (status === 404) return ApiErrorCode.NotFound;
   if (status >= 500) return ApiErrorCode.Server;
 

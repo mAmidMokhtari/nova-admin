@@ -111,6 +111,7 @@ export const fa = {
     [ApiErrorCode.Network]: 'ارتباط با سرور برقرار نشد. اتصال اینترنت را بررسی کنید.',
     [ApiErrorCode.Timeout]: 'پاسخ سرور بیش از حد طول کشید. دوباره تلاش کنید.',
     [ApiErrorCode.Unauthorized]: 'نشست شما منقضی شده است. دوباره وارد شوید.',
+    [ApiErrorCode.Forbidden]: 'اجازهٔ انجام این کار را ندارید.',
     [ApiErrorCode.NotFound]: 'اطلاعات درخواستی پیدا نشد.',
     [ApiErrorCode.Server]: 'سرور با خطا مواجه شد. کمی بعد دوباره تلاش کنید.',
     [ApiErrorCode.Unknown]: 'خطای غیرمنتظره‌ای رخ داد. دوباره تلاش کنید.',
