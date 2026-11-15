@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import { useDictionary } from '@/Dictionary';
 import { Button } from '@/Shared/Button';
 import { FormField } from '@/Shared/FormField';
+import { RevalidateOnLanguageChange } from '@/Shared/RevalidateOnLanguageChange';
 import type { LoginPayload } from '@/types';
 import { Direction } from '@/types/Enums';
 import { createLoginSchema } from '@/Validations/login.schema';
@@ -57,6 +58,7 @@ export function LoginForm({ errorMessage, onSubmit }: LoginFormProps) {
     <Formik initialValues={INITIAL_VALUES} validationSchema={validationSchema} onSubmit={onSubmit}>
       {({ isSubmitting }) => (
         <Form noValidate>
+          <RevalidateOnLanguageChange />
           {errorMessage && <ErrorBanner role="alert">{errorMessage}</ErrorBanner>}
 
           <Fields>

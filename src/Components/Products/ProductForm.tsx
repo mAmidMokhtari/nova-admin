@@ -5,6 +5,7 @@ import { useDictionary } from '@/Dictionary';
 import { Button } from '@/Shared/Button';
 import { FormField, type FormFieldOption } from '@/Shared/FormField';
 import { FormActions, FormGrid, FormGridFull } from '@/Shared/FormLayout';
+import { RevalidateOnLanguageChange } from '@/Shared/RevalidateOnLanguageChange';
 import type { CreateProductPayload, ProductFormValues } from '@/types';
 import { Direction } from '@/types/Enums';
 import { parseLocalizedNumber } from '@/Utils/numbers';
@@ -52,6 +53,7 @@ export function ProductForm({ categories, onSubmit, onCancel }: ProductFormProps
     >
       {({ isSubmitting }) => (
         <Form noValidate>
+          <RevalidateOnLanguageChange />
           <FormGrid>
             <FormGridFull>
               <FormField name="title" label={labels.title} placeholder={labels.titlePlaceholder} />

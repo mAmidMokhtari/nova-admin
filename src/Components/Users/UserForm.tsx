@@ -5,6 +5,7 @@ import { useDictionary } from '@/Dictionary';
 import { Button } from '@/Shared/Button';
 import { FormField } from '@/Shared/FormField';
 import { FormActions, FormGrid } from '@/Shared/FormLayout';
+import { RevalidateOnLanguageChange } from '@/Shared/RevalidateOnLanguageChange';
 import type { CreateUserPayload, UserFormValues } from '@/types';
 import { Direction } from '@/types/Enums';
 import { toEnglishDigits } from '@/Utils/numbers';
@@ -48,6 +49,7 @@ export function UserForm({ onSubmit, onCancel }: UserFormProps) {
     >
       {({ isSubmitting }) => (
         <Form noValidate>
+          <RevalidateOnLanguageChange />
           <FormGrid>
             <FormField name="firstName" label={labels.firstName} autoComplete="off" />
             <FormField name="lastName" label={labels.lastName} autoComplete="off" />
