@@ -12,7 +12,7 @@ import {
   selectUsersStatus,
 } from '@/Redux/slices/usersSlice';
 import type { CreateUserPayload } from '@/types';
-import { RequestStatus, ToastType } from '@/types/Enums';
+import { ApiErrorCode, RequestStatus, ToastType } from '@/types/Enums';
 import { getErrorMessage } from '@/Utils/errors';
 import { formatNumber, interpolate } from '@/Utils/formatters';
 import { matchesQuery } from '@/Utils/search';
@@ -54,6 +54,9 @@ export function useUsersPage() {
       dispatch(toastShown(ToastType.Success, dictionary.users.created));
       setIsCreateOpen(false);
     } catch (error) {
+      // The store has already signed the admin out and explained why.
+      if (error === ApiErrorCode.Unauthorized) return;
+
       dispatch(toastShown(ToastType.Error, getErrorMessage(error, dictionary)));
     }
   };
