@@ -5,6 +5,7 @@ export enum ApiErrorCode {
   Unauthorized = 'unauthorized',
   Forbidden = 'forbidden',
   NotFound = 'notFound',
+  Validation = 'validation',
   Server = 'server',
   Unknown = 'unknown',
 }

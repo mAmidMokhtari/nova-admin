@@ -113,6 +113,7 @@ export const fa = {
     [ApiErrorCode.Unauthorized]: 'نشست شما منقضی شده است. دوباره وارد شوید.',
     [ApiErrorCode.Forbidden]: 'اجازهٔ انجام این کار را ندارید.',
     [ApiErrorCode.NotFound]: 'اطلاعات درخواستی پیدا نشد.',
+    [ApiErrorCode.Validation]: 'سرور اطلاعات ارسال‌شده را نپذیرفت. ورودی‌ها را بررسی کنید.',
     [ApiErrorCode.Server]: 'سرور با خطا مواجه شد. کمی بعد دوباره تلاش کنید.',
     [ApiErrorCode.Unknown]: 'خطای غیرمنتظره‌ای رخ داد. دوباره تلاش کنید.',
   },

@@ -32,6 +32,7 @@ function resolveErrorCode(error: AxiosError): ApiErrorCode {
   // The session is valid but may not do this, so the admin stays signed in.
   if (status === 403) return ApiErrorCode.Forbidden;
   if (status === 404) return ApiErrorCode.NotFound;
+  if (status === 400 || status === 422) return ApiErrorCode.Validation;
   if (status >= 500) return ApiErrorCode.Server;
 
   return ApiErrorCode.Unknown;

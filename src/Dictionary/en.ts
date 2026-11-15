@@ -115,6 +115,7 @@ export const en: Dictionary = {
     [ApiErrorCode.Unauthorized]: 'Your session has expired. Sign in again.',
     [ApiErrorCode.Forbidden]: 'You do not have permission to do this.',
     [ApiErrorCode.NotFound]: 'The requested data was not found.',
+    [ApiErrorCode.Validation]: 'The server rejected the submitted data. Check the fields.',
     [ApiErrorCode.Server]: 'The server ran into a problem. Try again shortly.',
     [ApiErrorCode.Unknown]: 'Something unexpected happened. Try again.',
   },
