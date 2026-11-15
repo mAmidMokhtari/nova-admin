@@ -85,6 +85,9 @@ const productsSlice = createSlice({
         state.items = action.payload;
       })
       .addCase(fetchProducts.rejected, (state, action) => {
+        // Sign out has already cleared this slice; a failed state here would survive the next sign-in.
+        if (action.payload === ApiErrorCode.Unauthorized) return initialState;
+
         state.status = RequestStatus.Failed;
         state.error = action.payload ?? ApiErrorCode.Unknown;
       })
@@ -95,7 +98,9 @@ const productsSlice = createSlice({
         state.categoriesStatus = RequestStatus.Succeeded;
         state.categories = action.payload;
       })
-      .addCase(fetchProductCategories.rejected, (state) => {
+      .addCase(fetchProductCategories.rejected, (state, action) => {
+        if (action.payload === ApiErrorCode.Unauthorized) return initialState;
+
         state.categoriesStatus = RequestStatus.Failed;
       })
       .addCase(createProduct.fulfilled, (state, action) => {

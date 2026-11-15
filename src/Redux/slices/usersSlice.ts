@@ -67,6 +67,9 @@ const usersSlice = createSlice({
         state.items = action.payload;
       })
       .addCase(fetchUsers.rejected, (state, action) => {
+        // Sign out has already cleared this slice; a failed state here would survive the next sign-in.
+        if (action.payload === ApiErrorCode.Unauthorized) return initialState;
+
         state.status = RequestStatus.Failed;
         state.error = action.payload ?? ApiErrorCode.Unknown;
       })
