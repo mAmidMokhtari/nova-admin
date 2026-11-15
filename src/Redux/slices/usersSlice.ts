@@ -8,6 +8,8 @@ import * as usersService from '@/Utils/services/users.service';
 
 import type { RootState } from '../store';
 
+import { loggedOut } from './authSlice';
+
 type UsersState = {
   items: User[];
   status: RequestStatus;
@@ -54,6 +56,8 @@ const usersSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      // The next admin in this tab must not see what the previous one loaded or added.
+      .addCase(loggedOut, () => initialState)
       .addCase(fetchUsers.pending, (state) => {
         state.status = RequestStatus.Loading;
         state.error = null;

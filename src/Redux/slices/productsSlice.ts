@@ -8,6 +8,8 @@ import * as productsService from '@/Utils/services/products.service';
 
 import type { RootState } from '../store';
 
+import { loggedOut } from './authSlice';
+
 type ProductsState = {
   items: Product[];
   status: RequestStatus;
@@ -72,6 +74,8 @@ const productsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
+      // The next admin in this tab must not see what the previous one loaded or added.
+      .addCase(loggedOut, () => initialState)
       .addCase(fetchProducts.pending, (state) => {
         state.status = RequestStatus.Loading;
         state.error = null;
