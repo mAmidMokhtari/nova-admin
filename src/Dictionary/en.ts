@@ -119,6 +119,10 @@ export const en: Dictionary = {
     [ApiErrorCode.Server]: 'The server ran into a problem. Try again shortly.',
     [ApiErrorCode.Unknown]: 'Something unexpected happened. Try again.',
   },
+  errorBoundary: {
+    title: 'Something went wrong',
+    description: 'This page could not be displayed. Try again.',
+  },
   notFound: {
     title: 'Page not found',
     description: 'This address does not exist in the panel.',

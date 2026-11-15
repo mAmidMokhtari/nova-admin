@@ -117,6 +117,10 @@ export const fa = {
     [ApiErrorCode.Server]: 'سرور با خطا مواجه شد. کمی بعد دوباره تلاش کنید.',
     [ApiErrorCode.Unknown]: 'خطای غیرمنتظره‌ای رخ داد. دوباره تلاش کنید.',
   },
+  errorBoundary: {
+    title: 'مشکلی پیش آمد',
+    description: 'نمایش این صفحه با خطا مواجه شد. دوباره تلاش کنید.',
+  },
   notFound: {
     title: 'صفحه پیدا نشد',
     description: 'نشانی واردشده در پنل وجود ندارد.',
